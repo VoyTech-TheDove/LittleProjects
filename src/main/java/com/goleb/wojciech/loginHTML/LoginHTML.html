@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>document</title>
+</head>
+<body>
+<section>
+    <form action="" method="GET">
+        <fieldset>
+            <legend> Please enter the credentials</legend>
+            <label for="login">Email (login) </label>
+            <input required id="login" type="email" placeholder="email"> <br>
+            <label for="password"> password</label>
+            <input required id="password" type="password" placeholder="password"/> <br>
+            <label for="consent"> Consent </label>
+            <input required type=checkbox id="consent" name="consent" value="true"/>I have read and understood the terms of
+            agreement <br>
+        </fieldset>
+        <input type="submit" value="submit" />
+        <input type="button" onclick ="getData()" value="show" />
+        <button onclick="showAlert()">show alert</button>
+    </form>
+    <div id="answer"></div>
+</section>
+<script>
+    var login;
+    var password;
+    var consent;
+    function getData(){
+        login = document.getElementById('login').value
+        password = document.getElementById('password').value
+        consent = document.getElementById('consent').value
+    }
+    function showAlert(){
+        getData();
+        var message ="login: "+login +"\npaswsword: "+password +"\nconsent: "+ consent
+        alert(message);
+    }
+</script>
+</body>
+</html>
